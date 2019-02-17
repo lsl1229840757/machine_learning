@@ -15,6 +15,7 @@ for line in file.readlines():
     line_split = line.split(",")
     x_data.append(float(line_split[0]))
     y_data.append(float(line_split[1]))
+file.close()
 plotData.plot(x_data, y_data)
 # =================== Part 3: Cost and Gradient descent ===================
 # initialize some useful variables
@@ -55,6 +56,8 @@ ax.set_title("Visualizing J(theta_0, theta_1):surface")
 ax.plot_surface(theta0_vals, theta1_vals, J_vals.T, cmap='rainbow')
 plt.figure()
 plt.title("Visualizing J(theta_0, theta_1):contour")
+# Thinking :why does contour use J_vals.T as input not J-vals
+# 我觉得这个应该是matplot的contour和plot_surface在底层实现的时候将x轴（theta0)作为列来输入所以需要转置
 plt.contour(theta0_vals, theta1_vals, J_vals.T, np.logspace(-2, 3, 20), cmap='rainbow')
 plt.scatter(theta[0], theta[1], marker='*')
 plt.show()
