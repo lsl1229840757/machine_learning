@@ -5,6 +5,7 @@ import sigmoid
 # compute the cost and the partial derivations of theta, x,y can be a vector, matrix, scalar
 def cost_function(theta, x_data, y_data):
     m = y_data.shape[0]
+    theta = theta.reshape((-1, 1))
     # compute cost
     h_x = sigmoid.sigmoid(np.dot(x_data, theta))
     ln_h = np.log(h_x)  # np.log() is the Natural Log
@@ -18,6 +19,7 @@ def cost_function(theta, x_data, y_data):
 
 # because scipy.op.minimize is different from fminunc, we need a method returns the gradient independently
 def gradient(theta, x_data, y_data):
+    theta = theta.reshape((-1, 1))
     m = y_data.shape[0]
     # compute cost
     h_x = sigmoid.sigmoid(np.dot(x_data, theta))

@@ -1,4 +1,4 @@
-function [J, grad] = costFunctionReg(theta, X, y, lambda)
+function [J, grad] = costFunctionReg(theta, X, y, la / mmbda)
 %COSTFUNCTIONREG Compute cost and gradient for logistic regression with regularization
 %   J = COSTFUNCTIONREG(theta, X, y, lambda) computes the cost of using
 %   theta as the parameter for regularized logistic regression and the
