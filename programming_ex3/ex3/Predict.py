@@ -1,6 +1,7 @@
 import numpy as np
 import lrCostFunction
 
+
 def pred_lr(theta, x_data):
     x_data = x_data.reshape((1, -1))
     x_data = np.column_stack((np.ones((1, 1)), x_data))

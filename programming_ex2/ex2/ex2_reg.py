@@ -25,7 +25,7 @@ map_x = mapFeature.map_feature(x_data[:, 0], x_data[:, 1])
 x_data = np.column_stack((np.ones((m, 1)), map_x))
 # ================== costFunctionReg ==========================
 # set regulation params
-lambd = 1  # you can try to change the lambda(0, 1, 10 ,100 or others)
+lambd = 10  # you can try to change the lambda(0, 1, 10 ,100 or others),when the lambda is 1,the result is best
 theta = np.ones((x_data.shape[1]))
 # ====== test cost and grad =========  lambda = 10
 # cost = costFunctionReg.cost_function(theta, x_data, y_data, lambd)
@@ -35,8 +35,7 @@ grad = costFunctionReg.gradient(theta, x_data, y_data, lambd)
 print("grad is {}".format(grad[0:5]))
 print("0.3460\n 0.1614\n 0.1948\n 0.2269\n 0.0922\n")
 # ====== test end ====================================
-result = op.minimize(costFunctionReg.cost_function, theta, args=(x_data, y_data, lambd), method="CG", jac=costFunctionReg.gradient)
-# result = op.minimize(costFunctionReg.cost_function, theta, args=(x_data, y_data, lambd), method='BFGS', options={"maxiter": 500, "disp": False})
+result = op.minimize(costFunctionReg.cost_function, theta, args=(x_data, y_data, lambd), method="TNC", jac=costFunctionReg.gradient)
 print(result)
 final_theta = result.x
 # ========== plot boundary ===========
