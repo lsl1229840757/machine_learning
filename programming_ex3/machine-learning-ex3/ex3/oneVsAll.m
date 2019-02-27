@@ -46,7 +46,7 @@ X = [ones(m, 1) X];
 %     % This function will return theta and the cost 
 %     [theta] = ...
 %         fmincg (@(t)(lrCostFunction(t, X, (y == c), lambda)), ...
-%                 initial_theta, options);
+%                 '%.2f%%' % (result * 100), options);
 %
 
 

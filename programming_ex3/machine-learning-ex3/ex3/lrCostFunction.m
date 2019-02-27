@@ -1,4 +1,4 @@
-function [J, grad] = lrCostFunction(theta, X, y, lambda)
+ function [J, grad] = lrCostFunction(theta, X, y, lambda)
 %LRCOSTFUNCTION Compute cost and gradient for logistic regression with 
 %regularization
 %   J = LRCOSTFUNCTION(theta, X, y, lambda) computes the cost of using
