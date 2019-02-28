@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import predictOneVsAll
 # ================== load Data =============================================================
 data = loadmat("../machine-learning-ex3/ex3/ex3data1.mat")
-x_data = data["X"]   # x_data here is a 5000 * 4000 matrix (5000 training examples, 20 * 20 grid of pixel is unrolled into 4000-deminsional vector
+x_data = data["X"]   # x_data here is a 5000 * 400 matrix (5000 training examples, 20 * 20 grid of pixel is unrolled into 4000-deminsional vector
 y_data = data.get("y")  # y_data here is a 5000 * 1 matrix(label)
 # hint : must transpose the data to get the oriented data
 x_data = np.array([im.reshape((20, 20)).T for im in x_data])

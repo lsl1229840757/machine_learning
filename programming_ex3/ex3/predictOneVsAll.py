@@ -1,4 +1,3 @@
-import numpy as np
 import Predict
 
 def pred_accuracy(theta, x_data, y_data):

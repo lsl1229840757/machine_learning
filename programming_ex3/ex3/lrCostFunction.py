@@ -1,7 +1,6 @@
 import numpy as np
 
 
-
 def sigmoid(x):
     return 1 / (1 + np.exp(-x))
 
@@ -22,7 +21,7 @@ def cost_reg(theta, x_data, y_data, l):
 
 def grad_reg(theta, x_data, y_data, l):
     m, n = x_data.shape
-    theta_tempt = theta.reshape((-1, 1)).copy()
+    theta_tempt = theta.reshape((-1, 1)).copy()  # must copy
     y_data = y_data.reshape((-1, 1))
     hx = sigmoid(np.dot(x_data, theta_tempt))
     theta_tempt[0, 0] = 0  # don't penalize theta0
